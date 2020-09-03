@@ -1,6 +1,10 @@
 # Spherical Hashing
 A Tensorflow 2 implementation of [Spherical Hashing](https://ieeexplore.ieee.org/document/6248024).
 
+Spherical hashing is a way to compute a binary encoding of a feature vector while still maintaining
+spatial coherence. This binary encoding can then be used for an approximate nearest neighbor 
+solution since the compactness of this representation allows for faster neighbor search.
+
 ## Usage
 ```
 from spherical_hashing import train_spherical_hashing
