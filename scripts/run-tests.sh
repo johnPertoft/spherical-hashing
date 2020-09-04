@@ -1,7 +1,11 @@
 #!/usr/bin/env bash
 
-IMAGE="spherical-hashing"
+# Run from project root.
+SCRIPT_DIR=$(dirname $0)
+pushd ${SCRIPT_DIR}/..
 
+# Run unit tests.
+IMAGE="spherical-hashing"
 docker build -t ${IMAGE} .
 docker run -it --rm \
     -v $(pwd):/workspace \
