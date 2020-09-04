@@ -7,7 +7,7 @@ with open("README.md") as f:
 
 setup(
     name="tf-spherical-hashing",
-    version="0.0.4",
+    version="0.0.1",
     description="Tensorflow implementation of Spherical Hashing.",
     long_description=long_description,
     long_description_content_type="text/markdown",
