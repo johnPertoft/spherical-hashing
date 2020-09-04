@@ -34,5 +34,5 @@ docker run -it --rm \
     ${IMAGE} \
     bash -c "
         python setup.py sdist bdist_wheel && 
-        twine upload -u \"\${PIP_USER}\" -p \"\${PIP_PWD}\" --repository-url https://pypi.org/legacy/ dist/*
+        twine upload -u \"\${PIP_USER}\" -p \"\${PIP_PWD}\" --repository-url https://upload.pypi.org/legacy/ dist/*
     "
