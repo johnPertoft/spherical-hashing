@@ -21,3 +21,15 @@ bits = sph_model(x_test, apply_pack_bits=True)
 ```
 pip install tf-spherical-hashing
 ```
+
+## Development
+
+### Run tests
+```
+./scripts/run-tests.sh
+```
+
+### Publish pip package
+```
+./scripts/publish.sh
+```
