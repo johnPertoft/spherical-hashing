@@ -1,13 +1,13 @@
 #!/usr/bin/env bash
 set -e
 
-if [ -z "${PIP_USER}" ]; then
-    echo "Environment variable PIP_USER is not set."
+if [ -z "${PYPI_USER}" ]; then
+    echo "Environment variable PYPI_USER is not set."
     exit 1
 fi
 
-if [ -z "${PIP_PWD}" ]; then
-    echo "Environment variable PIP_PWD is not set."
+if [ -z "${PYPI_PWD}" ]; then
+    echo "Environment variable PYPI_PWD is not set."
     exit 1
 fi
 
@@ -29,10 +29,10 @@ IMAGE="spherical-hashing"
 docker build -t ${IMAGE} .
 docker run -it --rm \
     -v $(pwd):/workspace \
-    -e PIP_USER="${PIP_USER}" \
-    -e PIP_PWD="${PIP_PWD}" \
+    -e PYPI_USER="${PYPI_USER}" \
+    -e PYPI_PWD="${PYPI_PWD}" \
     ${IMAGE} \
     bash -c "
         python setup.py sdist bdist_wheel && 
-        twine upload -u \"\${PIP_USER}\" -p \"\${PIP_PWD}\" --repository-url https://upload.pypi.org/legacy/ dist/*
+        twine upload -u \"\${PYPI_USER}\" -p \"\${PYPI_PWD}\" --repository-url https://upload.pypi.org/legacy/ dist/*
     "
